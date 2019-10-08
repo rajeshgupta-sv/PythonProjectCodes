@@ -1,3 +1,0 @@
-"pencil"|"eraser"|"sharpner"
-"book"|"chair"|"table"
-"apple"|"mango"|"grapes"
