@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+    <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">Latest1</a>
+              <small class="text-muted">Test1</small>
+            </div>
+            <h2><a class="article-title" href="#">Test</a></h2>
+            <p class="article-content">
+              <h2>Flow Diagram</h2>
+              <img src="{{ url_for('static', filename='GitHub.jpg') }}", alt="Trulli" width="300" height="200">
+             <p>  Git Cheat Sheet
+  Initial Setup
+  Initialize a repo
+  Create an empty git repo or reinitialize an existing one
+
+  $ git init
+  Fork a repo
+  Click the "Fork" button at the top-right of any repository's GitHub page.
+
+  Clone a repo
+  Clone the foo repo into a new directory called foo:
+
+  $ git clone https://github.com/<username>/foo.git foo
+  Setup Remotes
+  First, let's see a list of the repositories (remotes) whose branches you track:
+
+  $ git remote -v
+  Oh, it looks like we haven't setup upstream. Now is the time:
+ </p>
+  $ git remote add upstream https://github.com/<upstream_username>/<repo_name>.git
+  $ git fetch upstream
+  Every-day Workflow
+  Branching
+  When working on a fork, you could be switching between different branches quite commonly. As such, you generally want to stay off the master branch and work on your own feature branches so that master is always clean and you can base new branches off of it.
+
+  $ git switch -c <new-branch-name>
+  If upstream has a special develop branch or something, you can checkout that branch separately, but setup tracking so you can sync it up from time to time. Like the master branch, don't work directly on this one. Try to keep it clean.
+
+  $ git switch -c <new-branch-name> --track upstream/<remote-branch-to-track>
+  Maybe you made some progress on a branch at work, but now you want to continue work at home. In that case, you're dealing with your own fork's branch, so you'll checkout from origin.
+
+  $ git switch -c <new-branch-name> --track origin/<remote-branch-to-track>
+  If you're using the same name as a remote branch name, this can be simplified:
+
+  $ git switch -c <branch-name>
+  Use the -C option flag to force it.
+
+  Switching Branches
+  First, you'll want to know what branches are available in your working directory:
+
+  $ git branch
+    develop
+    feature_x
+    master
+  Now, you can easily switch between branches with git switch:
+
+  $ git switch master
+  $ git switch develop
+  $ git switch feature_x
+  $ git config --global alias.sw 'switch'
+  $ git sw master
+  Status
+  Not sure if you're working on a clean branch? Want to see what files have changed? Git status will show you a report.
+
+  $ git status
+  Staging Changes
+  Now that you've added or modified some files, you need to stage those commits into "the staging area." Think of git commits like an array of airlock hatches on a space ship. On this space ship, you can only open the door to one airlock at a time. When you open the hatch, you can put stuff in or take stuff out at will. Not until you've closed the door have you committed those changes (git commit) and not until you hit the red button do all those hatches open up into space (git push).
+
+  You can stage inidividual files or all files at once.
+
+  $ git add foo.js
+  $ git add .
+  Unstaging Changes / Restoring Files
+  Maybe you accidentally staged some files that you don't want to commit.
+
+            </p>
+          </div>
+        </article>
+{% endblock content %}
