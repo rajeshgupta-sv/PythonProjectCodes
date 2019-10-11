@@ -103,7 +103,7 @@ def contact():
 
 @app.route('/document')
 def document():
-    return render_template('FieldServe_Multitenancy_FadilEldin.html',title='Multitenancy')
+    return render_template('Test.html',title='Multitenancy')
 
 @app.route('/bye')
 def say_bye():
